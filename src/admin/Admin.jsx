@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase, BUCKET } from '../lib/supabase.js';
 import { chargerImages } from '../lib/images.jsx';
+import { compresser } from '../lib/compresser.js';
 import { sections } from '../data/slots.js';
 import Scene from '../components/Scene.jsx';
 
@@ -30,18 +31,25 @@ function Connexion() {
   );
 }
 
-function Emplacement({ slot, image, avecNom, onChange }) {
+function Emplacement({ slot, image, avecNom, largeurMax, onChange }) {
   const [etat, setEtat] = useState('');
   const [nom, setNom] = useState(image?.label ?? slot.defaut ?? '');
   useEffect(() => { setNom(image?.label ?? slot.defaut ?? ''); }, [image, slot.defaut]);
 
   const envoyer = async (fichier) => {
     if (!fichier) return;
-    if (fichier.size > 5 * 1024 * 1024) { setEtat('Image trop lourde (5 Mo maximum).'); return; }
+    setEtat('Préparation de l\'image…');
+    let pret;
+    try {
+      pret = await compresser(fichier, largeurMax);
+    } catch {
+      setEtat("Ce format d'image n'est pas pris en charge. Essayez une photo JPG ou PNG.");
+      return;
+    }
+    if (pret.blob.size > 5 * 1024 * 1024) { setEtat('Image trop lourde, même après compression (5 Mo maximum).'); return; }
     setEtat('Envoi…');
-    const ext = fichier.name.split('.').pop().toLowerCase();
-    const chemin = `${slot.id}-${Date.now()}.${ext}`;
-    const up = await supabase.storage.from(BUCKET).upload(chemin, fichier, { cacheControl: '3600' });
+    const chemin = `${slot.id}-${Date.now()}.${pret.ext}`;
+    const up = await supabase.storage.from(BUCKET).upload(chemin, pret.blob, { cacheControl: '3600', contentType: pret.blob.type });
     if (up.error) { setEtat("Échec de l'envoi : " + up.error.message); return; }
     const url = supabase.storage.from(BUCKET).getPublicUrl(chemin).data.publicUrl;
     const { error } = await supabase.from('itg_images').upsert({ slot: slot.id, url, label: avecNom ? nom : null, updated_at: new Date().toISOString() });
@@ -79,7 +87,7 @@ function Emplacement({ slot, image, avecNom, onChange }) {
         <div className="adm-acts">
           <label className="btn btn-accent adm-file" htmlFor={`f-${slot.id}`}>
             {image ? "Remplacer l'image" : 'Choisir une image'}
-            <input id={`f-${slot.id}`} type="file" accept="image/jpeg,image/png,image/webp,image/svg+xml" onChange={(e) => envoyer(e.target.files[0])} />
+            <input id={`f-${slot.id}`} type="file" accept="image/*" onChange={(e) => { envoyer(e.target.files[0]); e.target.value = ''; }} />
           </label>
           {image && <button type="button" className="btn adm-ghost" onClick={retirer}>Retirer</button>}
         </div>
@@ -123,10 +131,10 @@ export default function Admin() {
       {sections.map((sec) => (
         <section key={sec.titre} className="adm-sec">
           <h2>{sec.titre}</h2>
-          <p className="form-note adm-size">Taille conseillée : {sec.taille}. 5 Mo maximum ; l'image est recadrée au centre si les proportions diffèrent.</p>
+          <p className="form-note adm-size">Taille conseillée : {sec.taille}. Les photos sont réduites et compressées automatiquement à l'envoi ; l'image est recadrée au centre si les proportions diffèrent.</p>
           <div className="adm-grid">
             {sec.slots.map((slot) => (
-              <Emplacement key={slot.id} slot={slot} image={images[slot.id]} avecNom={sec.avecNom} onChange={recharger} />
+              <Emplacement key={slot.id} slot={slot} image={images[slot.id]} avecNom={sec.avecNom} largeurMax={sec.largeurMax} onChange={recharger} />
             ))}
           </div>
         </section>
