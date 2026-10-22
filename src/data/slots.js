@@ -3,6 +3,12 @@ import { galerie, references } from './site.js';
 // Emplacements d'images modifiables depuis le tableau de bord (/admin.html)
 export const sections = [
   {
+    titre: "Image d'accueil (en haut de page)",
+    taille: 'Format portrait 4:5, idéalement 1200 × 1500 px : une personne, par exemple un technicien ou l\'équipe',
+    largeurMax: 1200,
+    slots: [{ id: 'hero', nom: "Photo de l'accueil", scene: 'tech' }],
+  },
+  {
     titre: 'Galerie « En images »',
     taille: 'Format paysage 4:3, idéalement 1600 × 1200 px (JPG ou WebP)',
     largeurMax: 1600,

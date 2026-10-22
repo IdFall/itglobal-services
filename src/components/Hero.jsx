@@ -1,4 +1,6 @@
 import { useEffect, useRef } from 'react';
+import Scene from './Scene.jsx';
+import { useImages } from '../lib/images.jsx';
 
 // Pistes de circuit imprimé dessinées en fond
 function CircuitBackground() {
@@ -35,14 +37,9 @@ function CircuitBackground() {
   return <canvas ref={ref} aria-hidden="true" />;
 }
 
-const suivi = [
-  ['done', 'Reçu en atelier'],
-  ['done', 'Diagnostic effectué'],
-  ['now', 'Réparation en cours'],
-  ['', 'Prêt à récupérer'],
-];
 
 export default function Hero() {
+  const photo = useImages().hero?.url;
   return (
     <section className="hero" id="accueil">
       <CircuitBackground />
@@ -61,21 +58,12 @@ export default function Hero() {
             <span><b>Intervention</b> en boutique ou sur site</span>
           </div>
         </div>
-        <aside className="ticket" aria-label="Exemple de fiche de dépôt">
-          <div className="ticket-head"><strong>Fiche de dépôt</strong><span>N° 2026-0418</span></div>
-          <dl>
-            <dt>Appareil</dt><dd>PC portable 15"</dd>
-            <dt>Panne</dt><dd>Ne démarre plus</dd>
-            <dt>Diagnostic</dt><dd>Disque dur HS</dd>
-            <dt>Solution</dt><dd>SSD 512 Go + système</dd>
-            <dt>Devis</dt><dd>validé par le client</dd>
-          </dl>
-          <div className="steps-mini">
-            {suivi.map(([etat, texte]) => (
-              <div key={texte} className={etat ? undefined : 'later'}><span className={`dot ${etat}`} />{texte}</div>
-            ))}
-          </div>
-        </aside>
+        <figure className="hero-photo">
+          {photo
+            ? <img src={photo} alt="Technicien ITGlobal Services au travail" />
+            : <Scene name="tech" label="Technicien ITGlobal Services au travail" />}
+          <figcaption className="hero-badge"><span className="dot done" />Diagnostic offert avant devis</figcaption>
+        </figure>
       </div>
     </section>
   );

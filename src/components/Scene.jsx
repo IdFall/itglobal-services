@@ -2,6 +2,33 @@
 // Les couleurs viennent des classes .s-* (voir styles.css) pour suivre le thème clair/sombre.
 
 const scenes = {
+  tech: (
+    <>
+      <rect className="s-bg" width="400" height="500" />
+      <circle className="s-accent" cx="320" cy="90" r="46" opacity=".5" />
+      <path className="s-line" d="M0 400h400v100H0z" />
+      {/* établi et ordinateur ouvert */}
+      <rect className="s-band" x="40" y="380" width="320" height="18" rx="4" />
+      <rect className="s-ink" x="210" y="300" width="130" height="80" rx="6" />
+      <rect className="s-trace" x="218" y="308" width="114" height="64" rx="3" opacity=".8" />
+      <path className="s-ink" d="M195 380h160l-8-8H203z" />
+      {/* personnage */}
+      <path className="s-skin" d="M170 140c0-28 18-46 40-46s40 18 40 46-18 52-40 52-40-24-40-52z" />
+      <path className="s-hair" d="M168 132c-2-30 18-48 42-48s44 16 42 46c-10-14-26-20-42-20s-32 8-42 22z" />
+      <rect className="s-skin" x="198" y="186" width="24" height="22" />
+      <path className="s-shirt" d="M120 380c0-110 40-176 90-176s90 66 90 176z" />
+      <path className="s-accent" d="M196 210h28l-6 40h-16z" />
+      <rect className="s-surface" x="140" y="262" width="34" height="8" rx="2" opacity=".85" />
+      {/* casque */}
+      <path className="s-ink-thin" d="M166 132c0-34 20-56 44-56s44 22 44 56" />
+      <rect className="s-ink" x="158" y="126" width="16" height="30" rx="7" />
+      <rect className="s-ink" x="246" y="126" width="16" height="30" rx="7" />
+      <path className="s-ink-thin" d="M166 156c0 22 14 30 30 30" />
+      {/* outils */}
+      <rect className="s-accent" x="70" y="360" width="60" height="20" rx="4" />
+      <circle className="s-ok" cx="80" cy="370" r="4" />
+    </>
+  ),
   shop: (
     <>
       <rect className="s-bg" width="400" height="300" />
@@ -102,7 +129,7 @@ const scenes = {
 
 export default function Scene({ name, label }) {
   return (
-    <svg className="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label={label}>
+    <svg className="scene" viewBox={name === 'tech' ? '0 0 400 500' : '0 0 400 300'} preserveAspectRatio="xMidYMid slice" role="img" aria-label={label}>
       {scenes[name] ?? scenes.shop}
     </svg>
   );
