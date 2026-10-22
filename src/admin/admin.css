@@ -1,0 +1,20 @@
+.adm { max-width: 1120px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-block: 40px 80px; display: grid; gap: 36px; }
+.adm h1 { font-size: 34px; }
+.adm h2 { font-size: 22px; margin-bottom: 14px; }
+.adm-login { max-width: 400px; margin: 40px auto 0; background: var(--surface); border: 1px solid var(--line); }
+.adm-err { color: #d1453b; font-size: 14px; }
+.adm-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; }
+.adm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.adm-slot { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: grid; min-width: 0; }
+.adm-preview { aspect-ratio: 4 / 3; background: var(--bg); display: grid; place-items: center; overflow: hidden; }
+.adm-preview img { width: 100%; height: 100%; object-fit: cover; }
+.adm-sec:last-child .adm-preview { aspect-ratio: 3 / 1; }
+.adm-sec:last-child .adm-preview img { object-fit: contain; padding: 12px; }
+.adm-body { padding: 14px; display: grid; gap: 8px; }
+.adm-acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.adm-acts .btn { padding: 10px 14px; font-size: 14px; }
+.adm-ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+.adm-file input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.adm-file { position: relative; }
+.adm-file:focus-within { outline: 3px solid var(--trace); outline-offset: 2px; }
+.adm-state { font-size: 13px; color: var(--ok); }
