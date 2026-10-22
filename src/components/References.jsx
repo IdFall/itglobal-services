@@ -7,14 +7,13 @@ export default function References() {
     const img = images[`reference-${i + 1}`];
     return img ? { ...r, nom: img.label || r.nom, logo: img.url } : r;
   });
-  const provisoire = references.some((r) => !r.logo);
   return (
     <section className="block" id="references" style={{ paddingTop: 0 }}>
       <div className="wrap">
         <div className="sec-head">
           <p className="eyebrow">Références</p>
           <h2>Ils nous ont fait confiance</h2>
-          <p>Entreprises, écoles et institutions qui nous confient leur matériel, leur réseau ou la maintenance de leur parc.</p>
+          <p>Entreprises, écoles et institutions qui nous confient leur matériel, leur réseau ou la maintenance de leur parc informatique.</p>
         </div>
         <ul className="logos">
           {references.map((r) => (
@@ -25,7 +24,6 @@ export default function References() {
             </li>
           ))}
         </ul>
-        {provisoire && <p className="form-note" style={{ marginTop: 14 }}>Emplacements provisoires : ils seront remplacés par les logos des clients.</p>}
       </div>
     </section>
   );

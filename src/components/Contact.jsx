@@ -58,9 +58,9 @@ export default function Contact() {
             )}
           </form>
           <div className="coords">
-            <div className="coord"><span className="k">Téléphone / WhatsApp</span><span className="v"><Provisoire on={contact.provisoire}>{contact.telephone}</Provisoire></span></div>
-            <div className="coord"><span className="k">Adresse</span><span className="v"><Provisoire on={contact.provisoire}>{contact.adresse}</Provisoire></span></div>
-            <div className="coord"><span className="k">E-mail</span><span className="v"><Provisoire on={contact.provisoire}>{contact.email}</Provisoire></span></div>
+            <div className="coord"><span className="k">Téléphone / WhatsApp</span><span className="v">{contact.telephone}</span></div>
+            <div className="coord"><span className="k">Adresse</span><span className="v">{contact.adresse}</span></div>
+            <div className="coord"><span className="k">E-mail</span><span className="v">{contact.email}</span></div>
             <div className="coord"><span className="k">Horaires</span>
               <div className="hours">
                 {contact.horaires.map((h) => <Fragment key={h.jours}><span>{h.jours}</span><Provisoire on={!!h.provisoire}>{h.heures}</Provisoire></Fragment>)}

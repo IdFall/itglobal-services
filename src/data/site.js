@@ -1,81 +1,123 @@
 // Toutes les informations du site sont ici : modifiez ce fichier pour mettre à jour le contenu.
-// Les valeurs marquées `provisoire: true` sont à confirmer avec la boutique.
+// Source : présentation « PRESENTATION IT GLOBAL SERVICES 01 » (mai 2026).
+// Les valeurs marquées `provisoire: true` sont encore à confirmer avec l'entreprise.
+
+import boutique from '../assets/photos/boutique-logo.webp';
+import portablesDell from '../assets/photos/portables-dell.webp';
+import atelier from '../assets/photos/atelier-reparation.webp';
+import imprimante from '../assets/photos/imprimante.webp';
+import techCablage from '../assets/photos/technicien-cablage.webp';
+import techChantier from '../assets/photos/technicien-chantier.webp';
+import portableHp from '../assets/photos/portable-hp.webp';
+import pcBureau from '../assets/photos/pc-bureau.webp';
+import serveur from '../assets/photos/serveur-proliant.webp';
+import casque from '../assets/photos/accessoires-casque.webp';
+import papeterie from '../assets/photos/papeterie.webp';
+import formationBureautique from '../assets/photos/formation-bureautique.webp';
+import formationReseaux from '../assets/photos/formation-reseaux.webp';
+
+import arla from '../assets/logos/arla.webp';
+import fidelia from '../assets/logos/fidelia.webp';
+import eaConsulting from '../assets/logos/ea-consulting.webp';
+import bis from '../assets/logos/british-international-school.webp';
+import africaAssistance from '../assets/logos/africa-assistance.webp';
+import sika from '../assets/logos/sika.webp';
+import scm from '../assets/logos/scm-darussalam.webp';
+
+import kaspersky from '../assets/logiciels/kaspersky.webp';
+import office365 from '../assets/logiciels/office365.webp';
+import windows from '../assets/logiciels/windows.webp';
+import macos from '../assets/logiciels/macos.webp';
+import sage from '../assets/logiciels/sage-saari.webp';
+import glpi from '../assets/logiciels/glpi.webp';
 
 export const contact = {
-  telephone: '+221 XX XXX XX XX',
-  whatsapp: '', // format international sans + ni espaces, ex. 221770000000
-  adresse: 'Adresse de la boutique, Dakar',
-  ville: 'Dakar',
-  email: 'contact@itglobalservices.sn',
+  telephone: '+221 77 429 67 20',
+  whatsapp: '221774296720',
+  adresse: '138, Centre commercial El Mansour, Grand Dakar',
+  ville: 'Grand Dakar',
+  email: 'itglobalservices3@gmail.com',
   facebook: 'https://www.facebook.com/itglobalservices.sn/',
+  rc: 'SN-DKR-2022-A-1631',
+  ninea: '00912668',
   horaires: [
     { jours: 'Lun – Ven', heures: '09:00 – 19:00', provisoire: true },
     { jours: 'Samedi', heures: '09:00 – 14:00', provisoire: true },
-    { jours: 'Dimanche', heures: 'Fermé' },
+    { jours: 'Dimanche', heures: 'Fermé', provisoire: true },
   ],
-  provisoire: true,
 };
 
 export const stats = [
-  { valeur: '< 4 h', libelle: "Délai d'intervention à Dakar", provisoire: true },
-  { valeur: '7j/7', libelle: 'Assistance par téléphone et WhatsApp' },
-  { valeur: 'Gratuit', libelle: 'Diagnostic avant devis' },
-  { valeur: '500+', libelle: 'Appareils réparés', provisoire: true },
+  { valeur: '2022', libelle: 'Entreprise immatriculée à Dakar' },
+  { valeur: 'Toutes marques', libelle: 'PC, portables, serveurs, imprimantes' },
+  { valeur: '3 niveaux', libelle: 'Maintenance préventive, curative et évolutive' },
+  { valeur: '5 pôles', libelle: 'Maintenance, électronique, réseaux, ventes, communication' },
 ];
 
 export const produits = [
-  { icone: 'laptop', titre: 'Ordinateurs portables', texte: "Modèles bureautique, étudiants et professionnels, configurés et prêts à l'emploi.", ref: 'HP · Dell · Lenovo · Asus' },
-  { icone: 'desktop', titre: 'PC de bureau et écrans', texte: 'Unités centrales, tout-en-un et moniteurs pour postes de travail.', ref: 'Écrans 19" à 27"' },
-  { icone: 'printer', titre: 'Imprimantes et consommables', texte: "Imprimantes jet d'encre et laser, cartouches, toners et papier.", ref: 'Encre · Toner · Ramettes A4' },
-  { icone: 'mouse', titre: 'Accessoires', texte: 'Claviers, souris, câbles, chargeurs, sacoches, clés USB et disques externes.', ref: 'USB · HDMI · Type-C' },
-  { icone: 'router', titre: 'Réseau et Wi-Fi', texte: "Routeurs, switchs, points d'accès, câblage RJ45 pour maisons et bureaux.", ref: 'Cat 6 · Wi-Fi 6' },
-  { icone: 'camera', titre: 'Vidéosurveillance', texte: 'Caméras, enregistreurs et kits complets, avec installation sur demande.', ref: 'IP · Analogique · Accès mobile' },
+  { photo: portableHp, titre: 'Ordinateurs portables', texte: 'Des marques reconnues pour leur performance et leur fiabilité, pour les professionnels comme pour les étudiants.', ref: 'HP · Dell · Lenovo · MacBook' },
+  { photo: pcBureau, titre: 'Ordinateurs fixes', texte: 'PC de bureau robustes et ordinateurs All-in-One, qui regroupent unité centrale et écran pour gagner de la place.', ref: 'PC bureau · All-in-One' },
+  { photo: serveur, titre: 'Serveurs', texte: "Pour centraliser, sécuriser et partager les données de l'entreprise, héberger vos applications et gérer vos utilisateurs.", ref: 'HP ProLiant' },
+  { photo: imprimante, titre: 'Imprimantes et consommables', texte: 'Imprimantes laser et jet d’encre, cartouches, toners et consommables informatiques.', ref: 'Laser · Jet d’encre · Toners' },
+  { photo: casque, titre: 'Accessoires', texte: 'Casques, batteries externes, claviers, souris, câbles et tous les accessoires du quotidien.', ref: 'Audio · Énergie · Connectique' },
+  { photo: papeterie, titre: 'Papeterie', texte: 'Classeurs, cahiers, fournitures de bureau et articles scolaires.', ref: 'Bureau · Scolaire' },
 ];
 
-// Galerie : ajoutez vos photos dans src/assets/photos/ puis importez-les ici,
-// ex. `import facade from '../assets/photos/facade.jpg'` et `photo: facade`.
-// Sans photo, une illustration s'affiche à la place.
+export const logiciels = [
+  { logo: kaspersky, nom: 'Kaspersky', texte: 'Protection contre les virus et menaces en ligne.' },
+  { logo: office365, nom: 'Microsoft 365', texte: 'Suite bureautique et outils collaboratifs.' },
+  { logo: windows, nom: 'Microsoft Windows', texte: 'Installation et mise à jour du système.' },
+  { logo: macos, nom: 'macOS', texte: 'Le système des ordinateurs Apple.' },
+  { logo: sage, nom: 'Sage Saari', texte: 'Gestion comptable, facturation et paie.' },
+  { logo: glpi, nom: 'GLPI', texte: 'Suivi des tickets et du parc informatique.' },
+];
+
+// Galerie : photos par défaut issues de la présentation. Chaque image peut être remplacée
+// depuis le tableau de bord (/admin.html) sans toucher au code.
 export const galerie = [
-  { categorie: 'Boutique', titre: 'Notre boutique', legende: "L'espace de vente à Dakar", scene: 'shop', photo: null, grande: true },
-  { categorie: 'Boutique', titre: 'Rayon ordinateurs', legende: 'Portables et PC de bureau en démonstration', scene: 'laptops', photo: null },
-  { categorie: 'Atelier', titre: "L'atelier de réparation", legende: 'Diagnostic et remplacement de pièces', scene: 'repair', photo: null },
-  { categorie: 'Boutique', titre: 'Imprimantes et consommables', legende: 'Cartouches, toners et papier en stock', scene: 'printers', photo: null },
-  { categorie: 'Installations', titre: 'Installation réseau', legende: 'Baie de brassage et câblage chez un client', scene: 'network', photo: null },
-  { categorie: 'Installations', titre: 'Vidéosurveillance', legende: "Pose de caméras pour un commerce", scene: 'cctv', photo: null },
+  { categorie: 'Boutique', titre: 'IT Global Services', legende: 'Vente, maintenance et réseaux à Grand Dakar', scene: 'shop', photo: boutique, grande: true },
+  { categorie: 'Boutique', titre: 'Ordinateurs portables', legende: 'HP, Dell, Lenovo et MacBook', scene: 'laptops', photo: portablesDell },
+  { categorie: 'Atelier', titre: 'Maintenance hardware', legende: 'Diagnostic et remplacement de pièces', scene: 'repair', photo: atelier },
+  { categorie: 'Boutique', titre: 'Imprimantes et consommables', legende: 'Imprimantes, toners et cartouches', scene: 'printers', photo: imprimante },
+  { categorie: 'Installations', titre: 'Câblage informatique', legende: 'Travaux de câblage réalisés par notre équipe', scene: 'network', photo: techCablage },
+  { categorie: 'Installations', titre: 'Sur le chantier', legende: 'Intervention de notre équipe chez un client', scene: 'cctv', photo: techChantier },
 ];
 
+// Les 5 axes d'intervention
 export const services = [
-  { titre: 'Réparation PC et portables', tag: 'Matériel', texte: 'Écran, clavier, charnière, carte mère, alimentation, ventilation.' },
-  { titre: 'Installation système et logiciels', tag: 'Logiciel', texte: 'Windows, pilotes, suite bureautique, antivirus, sauvegarde.' },
-  { titre: 'Nettoyage et suppression de virus', tag: 'Sécurité', texte: 'Désinfection, optimisation et nettoyage interne de la machine.' },
-  { titre: 'Récupération de données', tag: 'Données', texte: "Sur disque dur, SSD ou clé USB endommagés, quand c'est possible." },
-  { titre: "Maintenance d'imprimantes", tag: 'Matériel', texte: "Bourrage, tête d'impression, réinitialisation, installation réseau." },
-  { titre: 'Installation de postes', tag: 'Sur site', texte: "Mise en service d'ordinateurs Windows, macOS ou Linux, comptes, imprimantes partagées." },
-  { titre: 'Réseau, Wi-Fi et câblage', tag: 'Réseau', texte: 'Câblage RJ45, Wi-Fi qui couvre tout le bâtiment, liaison entre plusieurs bureaux.' },
-  { titre: 'Sécurité et sauvegarde', tag: 'Sécurité', texte: 'Pare-feu, antivirus, sauvegardes automatiques pour ne jamais perdre vos fichiers.' },
-  { titre: 'Assistance à distance', tag: 'À distance', texte: 'Prise en main sécurisée de votre ordinateur pour régler un souci sans vous déplacer.' },
+  { titre: 'Maintenance informatique', tag: 'Soft et hard', texte: 'PC, ordinateurs portables toutes marques, serveurs, imprimantes, etc.' },
+  { titre: 'Électronique', tag: 'Sécurité', texte: 'Installation et configuration de caméras de vidéosurveillance et de systèmes de contrôle d’accès sécurisés.' },
+  { titre: 'Réseaux informatiques', tag: 'Réseau', texte: 'Câblage, maintenance, administration réseau et déploiement des outils collaboratifs Microsoft 365.' },
+  { titre: 'Ventes', tag: 'Boutique', texte: 'Ordinateurs de marque, accessoires et consommables informatiques.' },
+  { titre: 'Communication et marketing', tag: 'Digital', texte: 'Conception de sites web et impression numérique sur objets.' },
 ];
 
 export const etapes = [
-  { titre: "Vous déposez l'appareil", texte: "En boutique, ou on vient le chercher pour les entreprises. Vous recevez une fiche de dépôt." },
-  { titre: 'On fait le diagnostic', texte: "On identifie la panne et ce qu'il faut remplacer ou réinstaller." },
-  { titre: 'Vous validez le devis', texte: "Prix en FCFA et délai annoncés à l'avance. Rien n'est fait sans votre accord." },
-  { titre: 'On répare et on teste', texte: 'Pièces de qualité et test complet avant la remise.' },
-  { titre: 'Vous récupérez votre appareil', texte: "On vous prévient par téléphone ou WhatsApp dès qu'il est prêt." },
+  { titre: "Vous déposez l'appareil", texte: 'En boutique au Centre commercial El Mansour, ou nous intervenons sur site pour les entreprises.' },
+  { titre: 'Nous faisons le diagnostic', texte: "Nous identifions la panne, logicielle ou matérielle, et ce qu'il faut remplacer." },
+  { titre: 'Vous validez le devis', texte: "Le prix et le délai sont annoncés avant l'intervention." },
+  { titre: 'Nous réparons et testons', texte: 'Remplacement des pièces nécessaires et test complet avant la remise.' },
+  { titre: 'Vous récupérez votre appareil', texte: "Nous vous prévenons par téléphone ou WhatsApp dès qu'il est prêt." },
 ];
 
+// Méthodes appliquées aux clients sous contrat de maintenance
 export const pointsEntreprise = [
-  { titre: 'Contrat de maintenance mensuel ou annuel', texte: 'Visites préventives, mises à jour et dépannages inclus, pour un coût fixe et prévisible.' },
-  { titre: 'Un interlocuteur unique', texte: 'Matériel, logiciels, réseau, imprimantes : un seul numéro à appeler quand quelque chose ne marche pas.' },
-  { titre: 'Intervention rapide', texte: "Assistance à distance immédiate, et déplacement sur site quand c'est nécessaire." },
-  { titre: 'Suivi de votre parc', texte: 'Inventaire des postes, licences et garanties, avec des conseils pour vos prochains achats.' },
+  { titre: 'Maintenance préventive', texte: 'Vérification des parties électroniques, entretien des machines et analyse de l’état du réseau informatique.' },
+  { titre: 'Maintenance curative', texte: 'Intervention sur site, prise en charge de la réparation et remplacement des pièces de rechange nécessaires.' },
+  { titre: 'Maintenance évolutive', texte: 'Amélioration et normalisation de l’environnement technique, mises à jour système, extensions mémoire et formation bureautique.' },
 ];
 
 export const atouts = [
-  { titre: 'Vente et réparation réunies', texte: 'Vous achetez, on installe, et on reste là quand il faut réparer.' },
-  { titre: 'Devis clair', texte: "Le prix est annoncé avant l'intervention, en FCFA." },
-  { titre: 'Conseil adapté', texte: 'On vous oriente vers le matériel qui correspond à votre usage et à votre budget.' },
-  { titre: 'Particuliers et entreprises', texte: "Du portable d'un étudiant au parc d'une PME." },
+  { titre: 'Une équipe jeune et compétente', texte: 'Une équipe dynamique, disponible pour toutes vos demandes liées à notre domaine d’intervention.' },
+  { titre: 'Un service après-vente responsable', texte: 'Nous faisons le lien entre les clients, les marques et les fabricants d’équipements informatiques.' },
+  { titre: 'Du matériel de qualité certifiée', texte: 'Ordinateurs et matériels informatiques de marques reconnues.' },
+  { titre: 'Un accompagnement dans la durée', texte: 'Nous vous accompagnons à travers les mutations technologiques de l’informatique et de la communication.' },
+];
+
+export const formations = [
+  { photo: formationBureautique, titre: 'Secrétariat bureautique', points: ['Word (rapports)', 'Excel (calculs)', 'PowerPoint (présentations)', 'Internet et messagerie', 'Outils collaboratifs Microsoft 365'] },
+  { photo: atelier, titre: 'Pratique en maintenance', points: ['Informatique', 'Ingénierie', 'Hardware et software', 'Sécurité', 'Réseaux'] },
+  { photo: formationReseaux, titre: 'Administration réseaux', points: ['Câblage', 'Configuration', 'Partage', 'Sécurité'] },
 ];
 
 export const conseils = [
@@ -85,22 +127,23 @@ export const conseils = [
 ];
 
 export const typesDemande = [
-  'Réparation / dépannage',
+  'Réparation / maintenance',
   'Achat de matériel',
-  'Installation réseau ou vidéosurveillance',
+  'Vidéosurveillance ou contrôle d’accès',
+  'Réseau informatique',
   'Contrat de maintenance entreprise',
+  'Formation',
+  'Site web ou impression',
 ];
 
-// Références clients : ajoutez les logos dans src/assets/logos/ puis importez-les ici,
-// ex. `import logoX from '../assets/logos/x.png'` et `logo: logoX`.
-// N'ajoutez que des clients qui ont donné leur accord pour apparaître sur le site.
+// Références clients (logos de la présentation). Chaque logo peut être remplacé depuis le tableau de bord.
 export const references = [
-  { nom: 'Client 1', secteur: 'Commerce', logo: null },
-  { nom: 'Client 2', secteur: 'École', logo: null },
-  { nom: 'Client 3', secteur: 'Cabinet', logo: null },
-  { nom: 'Client 4', secteur: 'PME', logo: null },
-  { nom: 'Client 5', secteur: 'Administration', logo: null },
-  { nom: 'Client 6', secteur: 'Hôtellerie', logo: null },
-  { nom: 'Client 7', secteur: 'Santé', logo: null },
-  { nom: 'Client 8', secteur: 'ONG', logo: null },
+  { nom: 'Arla', secteur: 'Agroalimentaire', logo: arla },
+  { nom: 'Fidelia Risk Solution', secteur: 'Assurance', logo: fidelia },
+  { nom: "E'A Consulting", secteur: 'Conseil', logo: eaConsulting },
+  { nom: 'British International School', secteur: 'Éducation', logo: bis },
+  { nom: 'Africa Assistance Internationale', secteur: 'Assistance', logo: africaAssistance },
+  { nom: 'Sika', secteur: 'Construction', logo: sika },
+  { nom: 'SCM Darussalam', secteur: 'Services', logo: scm },
+  { nom: 'Votre entreprise ?', secteur: 'Rejoignez-nous', logo: null },
 ];

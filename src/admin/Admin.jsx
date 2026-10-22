@@ -74,11 +74,11 @@ function Emplacement({ slot, image, avecNom, largeurMax, onChange }) {
   return (
     <article className="adm-slot">
       <div className="adm-preview">
-        {image ? <img src={image.url} alt={slot.nom} /> : slot.scene ? <Scene name={slot.scene} label={slot.nom} /> : <span className="logo-ph">Logo</span>}
+        {image ? <img src={image.url} alt={slot.nom} /> : slot.defautPhoto ? <img src={slot.defautPhoto} alt={slot.nom} /> : slot.scene ? <Scene name={slot.scene} label={slot.nom} /> : <span className="logo-ph">Logo</span>}
       </div>
       <div className="adm-body">
         <strong>{slot.nom}</strong>
-        <span className="form-note">{image ? 'Image personnalisée' : 'Illustration par défaut'}</span>
+        <span className="form-note">{image ? 'Image personnalisée' : 'Image par défaut'}</span>
         {avecNom && (
           <label htmlFor={`nom-${slot.id}`}>Nom de l'entreprise
             <input id={`nom-${slot.id}`} value={nom} onChange={(e) => setNom(e.target.value)} onBlur={enregistrerNom} />

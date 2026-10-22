@@ -1,6 +1,6 @@
 import { TopBar, Header } from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
-import { Products, Maintenance, Business, Why, Tips, Summary } from './components/Sections.jsx';
+import { Products, Maintenance, Business, Why, Training, Tips, Summary } from './components/Sections.jsx';
 import Gallery from './components/Gallery.jsx';
 import References from './components/References.jsx';
 import Contact from './components/Contact.jsx';
@@ -20,6 +20,7 @@ export default function App() {
         <Business />
         <References />
         <Why />
+        <Training />
         <Tips />
         <Summary />
         <Contact />

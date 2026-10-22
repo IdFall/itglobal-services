@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { contact } from '../data/site.js';
+import logo from '../assets/logo-itglobal.png';
 import Provisoire from './Provisoire.jsx';
 
 const menus = [
-  { titre: 'Matériel', href: '#produits', liens: [['Ordinateurs et écrans', '#produits'], ['Imprimantes et consommables', '#produits'], ['Accessoires', '#produits'], ['Vidéosurveillance', '#produits']] },
-  { titre: 'Maintenance', href: '#maintenance', liens: [['Dépannage et réparation', '#maintenance'], ['Installation de postes', '#maintenance'], ['Contrat de maintenance', '#entreprises'], ['Récupération de données', '#maintenance']] },
-  { titre: 'Réseau', href: '#maintenance', liens: [['Wi-Fi et câblage', '#maintenance'], ['Sécurité informatique', '#maintenance'], ['Sauvegarde', '#maintenance']] },
+  { titre: 'Produits', href: '#produits', liens: [['Ordinateurs portables et fixes', '#produits'], ['Serveurs', '#produits'], ['Imprimantes et consommables', '#produits'], ['Accessoires et papeterie', '#produits'], ['Logiciels', '#produits']] },
+  { titre: 'Services', href: '#maintenance', liens: [['Maintenance informatique', '#maintenance'], ['Vidéosurveillance et contrôle d’accès', '#maintenance'], ['Réseaux informatiques', '#maintenance'], ['Contrat de maintenance', '#entreprises'], ['Sites web et impression', '#maintenance']] },
 ];
 
 export function TopBar() {
@@ -14,8 +14,9 @@ export function TopBar() {
     <div className="topbar">
       <div className="wrap">
         <div className="group">
-          <span className="tagline">Votre partenaire informatique au quotidien</span>
-          <span>📍 <Provisoire>{contact.ville}</Provisoire></span>
+          <span className="tagline">Maintenance · Électronique · Réseaux · Ventes</span>
+          <span>📍 {contact.adresse}</span>
+          <span>📞 {contact.telephone}</span>
           <span>🕘 <Provisoire on={!!h.provisoire}>{h.heures}</Provisoire></span>
         </div>
         <div className="group links">
@@ -30,7 +31,7 @@ export function TopBar() {
   );
 }
 
-const liensSimples = [['Galerie', '#galerie'], ['Entreprises', '#entreprises'], ['Références', '#references'], ['Contact', '#contact']];
+const liensSimples = [['Formations', '#formations'], ['Galerie', '#galerie'], ['Entreprises', '#entreprises'], ['Références', '#references'], ['Contact', '#contact']];
 
 export function Header() {
   const [ouvert, setOuvert] = useState(false);
@@ -46,9 +47,8 @@ export function Header() {
   return (
     <header className="top">
       <div className="wrap">
-        <a className="logo" href="#accueil" aria-label="ITGlobal Services, accueil" onClick={fermer}>
-          <span className="logo-mark">IT</span>
-          <span>ITGlobal Services<small>Dakar · Sénégal</small></span>
+        <a className="logo" href="#accueil" aria-label="IT Global Services, accueil" onClick={fermer}>
+          <img src={logo} alt="" className="logo-img" />
         </a>
         <nav className="nav" aria-label="Navigation principale">
           {menus.map((m) => (
@@ -59,7 +59,7 @@ export function Header() {
               </div>
             </div>
           ))}
-          {liensSimples.filter(([t]) => t !== 'Références').map(([t, href]) => <a key={t} href={href}>{t}</a>)}
+          {liensSimples.filter(([t]) => t !== 'Références' && t !== 'Galerie').map(([t, href]) => <a key={t} href={href}>{t}</a>)}
         </nav>
         <a className="btn btn-accent cta-top" href="#contact">Demander un devis</a>
         <button type="button" className="burger" aria-expanded={ouvert} aria-controls="menu-mobile" aria-label={ouvert ? 'Fermer le menu' : 'Ouvrir le menu'} onClick={() => setOuvert(!ouvert)}>

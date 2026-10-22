@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Scene from './Scene.jsx';
+import techEchelle from '../assets/photos/technicien-echelle.webp';
 import { useImages } from '../lib/images.jsx';
 
 // Pistes de circuit imprimé dessinées en fond
@@ -45,24 +45,22 @@ export default function Hero() {
       <CircuitBackground />
       <div className="wrap">
         <div>
-          <p className="eyebrow" style={{ color: 'var(--accent)' }}>Vente · Maintenance · Installation</p>
-          <h1 style={{ marginTop: 14 }}>Prestataire informatique pour <em>particuliers et entreprises</em>.</h1>
-          <p className="lead">Vente de matériel, maintenance, installation de postes et de réseaux : ITGlobal Services équipe et dépanne votre informatique au Sénégal, en boutique ou sur site.</p>
+          <p className="eyebrow" style={{ color: 'var(--accent)' }}>Maintenance · Sécurité électronique · Informatique</p>
+          <h1 style={{ marginTop: 14 }}>Votre partenaire en <em>informatique et électronique</em> à Dakar.</h1>
+          <p className="lead">Maintenance de PC, serveurs et imprimantes toutes marques, vidéosurveillance, réseaux et vente de matériel informatique de qualité certifiée. Une équipe jeune et compétente, au Centre commercial El Mansour de Grand Dakar.</p>
           <div className="ctas">
-            <a className="btn btn-accent" href="#contact">Déposer une demande de réparation</a>
+            <a className="btn btn-accent" href="#contact">Demander une intervention</a>
             <a className="btn btn-ghost" href="#produits">Voir le matériel</a>
           </div>
           <div className="facts">
-            <span><b>Diagnostic</b> avant tout devis</span>
-            <span><b>Prix</b> en FCFA, sans surprise</span>
-            <span><b>Intervention</b> en boutique ou sur site</span>
+            <span><b>Toutes marques</b> PC, serveurs, imprimantes</span>
+            <span><b>Sur site</b> ou en boutique</span>
+            <span><b>Formations</b> bureautique et réseaux</span>
           </div>
         </div>
         <figure className="hero-photo">
-          {photo
-            ? <img src={photo} alt="Technicien ITGlobal Services au travail" />
-            : <Scene name="tech" label="Technicien ITGlobal Services au travail" />}
-          <figcaption className="hero-badge"><span className="dot done" />Diagnostic offert avant devis</figcaption>
+          <img src={photo ?? techEchelle} alt="Technicien IT Global Services en intervention" />
+          <figcaption className="hero-badge"><span className="dot done" />Notre équipe sur le terrain</figcaption>
         </figure>
       </div>
     </section>
