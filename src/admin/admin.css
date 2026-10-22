@@ -1,6 +1,7 @@
 .adm { max-width: 1120px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); padding-block: 40px 80px; display: grid; gap: 36px; }
 .adm h1 { font-size: 34px; }
-.adm h2 { font-size: 22px; margin-bottom: 14px; }
+.adm h2 { font-size: 22px; margin-bottom: 6px; }
+.adm-size { margin-bottom: 14px; }
 .adm-login { max-width: 400px; margin: 40px auto 0; background: var(--surface); border: 1px solid var(--line); }
 .adm-err { color: #d1453b; font-size: 14px; }
 .adm-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; }

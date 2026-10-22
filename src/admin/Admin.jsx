@@ -123,6 +123,7 @@ export default function Admin() {
       {sections.map((sec) => (
         <section key={sec.titre} className="adm-sec">
           <h2>{sec.titre}</h2>
+          <p className="form-note adm-size">Taille conseillée : {sec.taille}. 5 Mo maximum ; l'image est recadrée au centre si les proportions diffèrent.</p>
           <div className="adm-grid">
             {sec.slots.map((slot) => (
               <Emplacement key={slot.id} slot={slot} image={images[slot.id]} avecNom={sec.avecNom} onChange={recharger} />
