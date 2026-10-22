@@ -41,9 +41,7 @@ export const contact = {
   rc: 'SN-DKR-2022-A-1631',
   ninea: '00912668',
   horaires: [
-    { jours: 'Lun – Ven', heures: '09:00 – 19:00', provisoire: true },
-    { jours: 'Samedi', heures: '09:00 – 14:00', provisoire: true },
-    { jours: 'Dimanche', heures: 'Fermé', provisoire: true },
+    { jours: 'Tous les jours', heures: '08:00 – 20:00' },
   ],
 };
 
