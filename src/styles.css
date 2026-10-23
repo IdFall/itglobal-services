@@ -197,6 +197,9 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--t
 .result { display: grid; gap: 10px; padding: 14px; border: 1.5px dashed var(--ok); border-radius: 8px; font-size: 14px; }
 .result pre { margin: 0; white-space: pre-wrap; font-family: var(--f-mono); font-size: 13px; }
 .result .acts { display: flex; flex-wrap: wrap; gap: 10px; }
+.result p { margin: 0; }
+.form-err { margin: 0; font-size: 14px; color: #c0392b; }
+.piege { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .btn-dark { background: var(--band); color: var(--band-fg); }
 .coords { display: grid; gap: 22px; }
 .coord { display: grid; gap: 4px; padding-bottom: 18px; border-bottom: 1px solid color-mix(in srgb, var(--band-fg) 14%, transparent); }
@@ -213,6 +216,9 @@ footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 footer a { text-decoration: none; }
 footer a:hover { color: var(--band-fg); }
 footer .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 18px; border-top: 1px solid color-mix(in srgb, var(--band-fg) 12%, transparent); }
+footer .legal { align-items: center; }
+footer .btn-wa { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: #25d366; color: #0b3d1f; font-weight: 600; }
+footer .btn-wa:hover { background: #1ebe5b; color: #0b3d1f; }
 @media (max-width: 760px) { footer .cols { grid-template-columns: 1fr 1fr; } }
 
 /* Illustrations (couleurs liées au thème) */

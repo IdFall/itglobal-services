@@ -37,6 +37,9 @@ export const contact = {
   adresse: '138, Centre commercial El Mansour, Grand Dakar',
   ville: 'Grand Dakar',
   email: 'itglobalservices3@gmail.com',
+  // Adresse qui reçoit les demandes du formulaire de contact (envoi via formsubmit.co).
+  // Phase de test : ifallcv@gmail.com. Remplacer par itglobalservices3@gmail.com une fois validé.
+  emailFormulaire: 'ifallcv@gmail.com',
   facebook: 'https://www.facebook.com/itglobalservices.sn/',
   rc: 'SN-DKR-2022-A-1631',
   ninea: '00912668',
