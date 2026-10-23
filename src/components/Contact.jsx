@@ -96,6 +96,9 @@ export default function Contact() {
               </div>
             </div>
             <div className="coord"><span className="k">Facebook</span><a className="v" href={contact.facebook} target="_blank" rel="noopener">facebook.com/itglobalservices.sn</a></div>
+            <a className="btn-wa" href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent('Bonjour ITGlobal Services, ')}`} target="_blank" rel="noopener">
+              <WhatsAppIcon /> Écrivez-nous sur WhatsApp
+            </a>
           </div>
         </div>
       </div>
