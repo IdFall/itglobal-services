@@ -1,5 +1,4 @@
 import { contact } from '../data/site.js';
-import WhatsAppIcon from './WhatsAppIcon.jsx';
 
 const colonnes = [
   { titre: 'Matériel', liens: [['Ordinateurs', '#produits'], ['Imprimantes', '#produits'], ['Accessoires', '#produits'], ['Vidéosurveillance', '#produits']] },
@@ -30,9 +29,6 @@ export default function Footer() {
       <div className="wrap legal">
         <span>© {new Date().getFullYear()} IT Global Services</span>
         <span>RC : {contact.rc} · NINEA : {contact.ninea}</span>
-        <a className="btn-wa" href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent('Bonjour ITGlobal Services, ')}`} target="_blank" rel="noopener">
-          <WhatsAppIcon /> Écrivez-nous sur WhatsApp
-        </a>
       </div>
     </footer>
   );
