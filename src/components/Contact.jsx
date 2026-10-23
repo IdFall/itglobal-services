@@ -16,7 +16,7 @@ export default function Contact() {
   const envoyer = async (e) => {
     e.preventDefault();
     if (!form.nom.trim() || !form.msg.trim()) { setErreur('Indiquez au moins votre nom et votre demande.'); return; }
-    if (!form.tel.trim() && !form.email.trim()) { setErreur('Indiquez un téléphone ou un e-mail pour que nous puissions vous répondre.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) { setErreur('Indiquez une adresse e-mail valide pour que nous puissions vous répondre.'); return; }
     setErreur('');
     setEtat('envoi');
     try {
@@ -28,10 +28,10 @@ export default function Contact() {
           _template: 'table',
           _captcha: 'false',
           _honey: form.piege,
-          ...(form.email.trim() && { _replyto: form.email.trim() }),
+          _replyto: form.email.trim(),
           Nom: form.nom,
           Téléphone: form.tel || 'non précisé',
-          'E-mail': form.email || 'non précisé',
+          'E-mail': form.email.trim(),
           Demande: form.type,
           Détails: form.msg,
         }),
@@ -57,9 +57,9 @@ export default function Contact() {
           <form onSubmit={envoyer} noValidate>
             <div className="row">
               <label htmlFor="nom">Nom<input id="nom" required autoComplete="name" placeholder="Votre nom" value={form.nom} onChange={maj('nom')} /></label>
-              <label htmlFor="tel">Téléphone<input id="tel" type="tel" autoComplete="tel" placeholder="77 000 00 00" value={form.tel} onChange={maj('tel')} /></label>
+              <label htmlFor="email">E-mail<input id="email" type="email" required autoComplete="email" placeholder="vous@exemple.com" value={form.email} onChange={maj('email')} /></label>
             </div>
-            <label htmlFor="email">E-mail (facultatif)<input id="email" type="email" autoComplete="email" placeholder="vous@exemple.com" value={form.email} onChange={maj('email')} /></label>
+            <label htmlFor="tel">Téléphone (facultatif)<input id="tel" type="tel" autoComplete="tel" placeholder="77 000 00 00" value={form.tel} onChange={maj('tel')} /></label>
             <label htmlFor="type">Votre demande
               <select id="type" value={form.type} onChange={maj('type')}>
                 {typesDemande.map((t) => <option key={t}>{t}</option>)}
